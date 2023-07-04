@@ -1,21 +1,7 @@
-const readline = require('readline');
 const filtraPares = require('./filtraPares');
 const somaImpares = require('./somaImpares');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-rl.question('Insira um array de números separados por espaço: ', (input) => {
-  const numbers = input.split(' ').map(Number);
-
-  const pares = filtraPares(numbers);
-  console.log('Números pares:', pares);
-
-  const impares = numbers.filter((num) => num % 2 !== 0);
-  const soma = somaImpares(impares);
-  console.log('Soma dos números ímpares:', soma);
-
-  rl.close();
-});
+console.log(`A soma dos números ímpares é ${somaImpares(array)}`);
+console.log(`A quantidade de números pares é ${filtraPares(array).length}`);
